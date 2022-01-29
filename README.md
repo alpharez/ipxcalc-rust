@@ -1,6 +1,6 @@
 # IPXCALC
 
-IP Calculator in Rust
+IP Calculator in Rust.  Command line input of IP/bits and it will output info on the IP Subnet and hosts.
 
 ## Usage Example
 <pre>
