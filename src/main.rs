@@ -2,8 +2,6 @@
 // input is a string like "192.168.1.0/24"
 // output is host range, net addr, bcast addr
 
-// /mnt/home/steve/AndroidStudioProjects/IPvXCalc/app/src/main/java/com/alpharez/ipvxcalc/ipcalc
-// use std::str::FromStr;
 use std::env;
 use ipaddress::IPAddress;
 
