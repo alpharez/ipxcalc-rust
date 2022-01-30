@@ -4,6 +4,7 @@
 
 use std::env;
 use ipaddress::IPAddress;
+use text_colorizer::*;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -14,13 +15,12 @@ fn main() {
     }
     let str_prefix = &args[1];
     let ip = IPAddress::parse(str_prefix).unwrap();
-    println!("{:?}", ip);
+    // println!("{:?}", ip);
     if ip.is_ipv4() {
-        println!("Decimal Host Address {}", ip.host_address);
-        println!("Prefix {}", ip.prefix().to_s());
-        println!("Netmask {}", ip.netmask().to_s());
-        println!("Network {}", ip.network().to_s());
-        println!("Broadcast {}", ip.broadcast().to_s());
-        println!("Host Range: {} to {}", ip.first().to_s(), ip.last().to_s());
+	// eprintln!("{}", "ipxcalc".blue());
+        // eprintln!("Decimal Host Address {}", ip.host_address);
+        // eprintln!("{} {}", "Prefix".blue(), ip.prefix().to_s().yellow());
+        eprintln!("{} {} {} {} {} {}", "Network".blue(), ip.network().to_s().yellow(), "Broadcast".blue(), ip.broadcast().to_s().yellow(), "Mask".blue(), ip.netmask().to_s().yellow());
+        eprintln!("{} {} - {}", "Hosts".blue(), ip.first().to_s().green(), ip.last().to_s().green());
     }
 }
