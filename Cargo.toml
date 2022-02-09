@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 ipaddress = "0.1.2"
 text-colorizer = "1"
+clap = { version = "3.0.14", features = ["derive"] }
