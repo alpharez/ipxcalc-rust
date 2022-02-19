@@ -20,6 +20,13 @@ fn main() {
 	// eprintln!("{}", "ipxcalc".blue());
         // eprintln!("Decimal Host Address {}", ip.host_address);
         // eprintln!("{} {}", "Prefix".blue(), ip.prefix().to_s().yellow());
+
+        // is rfc1918?
+        if ip.is_private() {
+            eprintln!("Private Address");
+        } else {
+            eprintln!("Public Address");
+        }
         eprintln!("{} {} {} {} {} {}", "Network".blue(), ip.network().to_s().yellow(), "Broadcast".blue(), ip.broadcast().to_s().yellow(), "Mask".blue(), ip.netmask().to_s().yellow());
         eprintln!("{} {} - {}", "Hosts".blue(), ip.first().to_s().green(), ip.last().to_s().green());
     } else {
